@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 330 100% 98%; /* very light pink */
+    --foreground: 320 40% 30%; /* deep pink text */
+
+    --card: 333 100% 96%; /* soft rose */
+    --card-foreground: 320 40% 30%;
+
+    --popover: 333 100% 96%;
+    --popover-foreground: 320 40% 30%;
+
+    --primary: 322 80% 68%; /* fuchsia */
+    --primary-foreground: 330 100% 98%;
+    --primary-glow: 322 90% 80%;
+
+    --secondary: 340 80% 90%; /* light pink */
+    --secondary-foreground: 320 40% 30%;
+
+    --muted: 340 80% 90%;
+    --muted-foreground: 320 40% 60%;
+
+    --accent: 350 100% 88%; /* rose */
+    --accent-foreground: 320 40% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 330 100% 98%;
+
+    --border: 322 80% 80%;
+    --input: 322 80% 80%;
+    --ring: 322 80% 68%;
+
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(322 80% 68%), hsl(350 100% 88%));
+    --gradient-hero: linear-gradient(135deg, hsl(330 100% 98%), hsl(350 100% 88%));
+    --gradient-card: linear-gradient(135deg, hsl(333 100% 96%), hsl(340 80% 90%));
+    --shadow-glow: 0 0 40px hsl(322 80% 68% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(322 80% 68% / 0.1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 350 100% 98%;
+    --sidebar-foreground: 320 40% 30%;
+    --sidebar-primary: 322 80% 68%;
+    --sidebar-primary-foreground: 330 100% 98%;
+    --sidebar-accent: 350 100% 88%;
+    --sidebar-accent-foreground: 320 40% 30%;
+    --sidebar-border: 322 80% 80%;
+    --sidebar-ring: 322 80% 68%;
+  }
+
+  .dark {
+    --background: 320 40% 15%; /* deep pink */
+    --foreground: 350 100% 98%;
+
+    --card: 320 40% 20%;
+    --card-foreground: 350 100% 98%;
+
+    --popover: 320 40% 20%;
+    --popover-foreground: 350 100% 98%;
+
+    --primary: 350 100% 98%;
+    --primary-foreground: 320 40% 15%;
+
+    --secondary: 322 80% 30%;
+    --secondary-foreground: 350 100% 98%;
+
+    --muted: 322 80% 30%;
+    --muted-foreground: 350 100% 80%;
+
+    --accent: 322 80% 30%;
+    --accent-foreground: 350 100% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 350 100% 98%;
+
+    --border: 322 80% 30%;
+    --input: 322 80% 30%;
+    --ring: 350 100% 88%;
+    --sidebar-background: 320 40% 15%;
+    --sidebar-foreground: 350 100% 98%;
+    --sidebar-primary: 322 80% 68%;
+    --sidebar-primary-foreground: 350 100% 98%;
+    --sidebar-accent: 350 100% 88%;
+    --sidebar-accent-foreground: 350 100% 98%;
+    --sidebar-border: 322 80% 30%;
+    --sidebar-ring: 350 100% 88%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Poppins', system-ui, sans-serif;
+    background: linear-gradient(135deg, #fff6fa 0%, #fce4ec 100%);
+    min-height: 100vh;
+    position: relative;
+  }
+}
+
+section {
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.card-glass {
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.soft-shadow {
+  box-shadow: 0 4px 24px 0 rgba(236, 72, 153, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.04);
+}
+
+.rounded-xl {
+  border-radius: 1.5rem !important;
+}
+
+.pastel-section {
+  background: linear-gradient(120deg, #ffe0f7 0%, #e0e7ff 100%);
+}
+
+.bg-pattern {
+  background-image: radial-gradient(circle at 20% 20%, #fce4ec 2%, transparent 60%),
+    radial-gradient(circle at 80% 80%, #f8bbd0 2%, transparent 60%);
+}
+
+/* Utility for animated float */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
