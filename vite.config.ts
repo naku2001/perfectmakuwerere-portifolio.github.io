@@ -18,5 +18,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/perfectmakuwerere-portifolio/' // Replace with your GitHub repo name
+  base: '/perfectmakuwerere-portifolio.github.io/' // Replace with your GitHub repo name
 }));
